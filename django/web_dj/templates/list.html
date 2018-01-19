@@ -1,3 +1,4 @@
+{% load xx_tags %}
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -10,12 +11,17 @@
       <th>id</th>
       <th>name</th>
     </tr>
-    {% for item in li %}
+    <!-- {、% for 、item in、 li %} -->
+    {% get_xx_tab_list as list %}
+    {% for item in list %}
     <tr>
       <td>{{ item.id }}</td>
       <td>{{ item.xx_name }}</td>
     </tr>
     {% endfor %}
   </table>
+
+  <p><a href="/list/add/">add</a>&nbsp&nbsp&nbsp<a href="/list/del/">del</a></p>
+  <p><a href="/list/update/">update</a>
 </body>
 </html>

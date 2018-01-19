@@ -9,4 +9,6 @@ urlpatterns = [
     url(r'^list/add/ok/$', views.add_xxtabs),
     url(r'^list/del/$', views.del_xxtabs_form),
     url(r'^list/del/ok/$', views.del_xxtabs),
+    url(r'^list/update/$', views.update_xxtabs_form),
+    url(r'^list/update/ok/$', views.update_xxtabs),
 ]

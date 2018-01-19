@@ -17,10 +17,12 @@
     </tr>
     {% endfor %}
   </table>
-  <form action="/list/add/ok/" method="post">
+  <form action="/list/update/ok/" method="post">
     {% csrf_token %}
-    <p>输入需要添加的用户名：</p>
-    <p><input name="name"></p>
+    <p>输入需要修改的用户ID：</p>
+    <p><input name="post_id"></p>
+    <p>输入需要修改后的用户名：</p>
+    <p><input name="post_name"></p>
     <p><button type="submit">执行</button></p>
   </form>
 </body>

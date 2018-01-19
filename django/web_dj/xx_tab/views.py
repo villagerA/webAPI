@@ -19,7 +19,7 @@ def get_xxtabs(request):
     return render(request,'list.html',{'li':tab_list_obj})
 
 def add_xxtabs_form(request):
-    return render(request,'add.html')
+    return render(request,'add.html',{'li':models.xx_tab1.objects.all()})
 
 def add_xxtabs(request):
     name = request.POST['name']
@@ -32,4 +32,15 @@ def del_xxtabs_form(request):
 def del_xxtabs(request):
     post_id = int(request.POST['post_id'])
     models.xx_tab1.objects.filter(id=post_id).delete()
+    return render(request,'list.html',{'li':models.xx_tab1.objects.all()})
+
+def update_xxtabs_form(request):
+    return render(request,'update.html',{'li':models.xx_tab1.objects.all()})
+
+def update_xxtabs(request):
+    post_id = int(request.POST['post_id'])
+    post_name = request.POST['post_name']
+    models.xx_tab1.objects.filter(id=post_id).update(xx_name=post_name)
+    # user.name=post_name
+    # user.save()
     return render(request,'list.html',{'li':models.xx_tab1.objects.all()})
